@@ -1,0 +1,4 @@
+# Enable organize using directives on format
+[*.cs]
+dotnet_separate_import_directive_groups = true
+dotnet_sort_system_directives_first = true
