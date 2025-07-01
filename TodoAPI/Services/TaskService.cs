@@ -25,7 +25,10 @@ namespace TodoAPI.Services
                     DueDate = t.DueDate,
                     Priority = t.Priority,
                     Description = t.Description,
-                    IsCompleted = t.IsCompleted
+                    IsCompleted = t.IsCompleted,
+                    CreatedAt = t.CreatedAt,
+                    Tags = t.Tags,
+                    IsArchived = t.IsArchived
                 })
                 .ToListAsync();
         }
@@ -40,7 +43,10 @@ namespace TodoAPI.Services
                     DueDate = t.DueDate,
                     Priority = t.Priority,
                     Description = t.Description,
-                    IsCompleted = t.IsCompleted
+                    IsCompleted = t.IsCompleted,
+                    CreatedAt = t.CreatedAt,
+                    Tags = t.Tags,
+                    IsArchived = t.IsArchived
                 })
                 .FirstOrDefaultAsync();
 
@@ -56,7 +62,10 @@ namespace TodoAPI.Services
                 Description = task.Description,
                 DueDate = task.DueDate,
                 Priority = task.Priority,
-                IsCompleted = false
+                IsCompleted = false,
+                CreatedAt = DateTime.UtcNow, // Auto set
+                Tags = task.Tags ?? "others", // Optional with default
+                IsArchived = false
             };
 
             _context.Tasks.Add(new_task);
@@ -73,7 +82,8 @@ namespace TodoAPI.Services
             taskToUpdate.IsCompleted = task.IsCompleted;
             taskToUpdate.DueDate = task.DueDate;
             taskToUpdate.Priority = task.Priority;
-
+            taskToUpdate.Tags = task.Tags ?? "others"; // Optional with default
+            taskToUpdate.IsArchived = task.IsArchived;
             return await _context.SaveChangesAsync() > 0;
         }
 

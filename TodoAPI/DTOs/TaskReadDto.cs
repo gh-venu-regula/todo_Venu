@@ -22,5 +22,10 @@ namespace TodoAPI.DTOs
         [Range(1, 3, ErrorMessage = "Priority must be between 1 (Low) and 3 (High).")]
         public int Priority { get; set; } = 1; // 1=Low, 2=Medium, 3=High
 
+        [DataType(DataType.DateTime)]
+        public DateTime CreatedAt { get; set; }
+        [StringLength(200)]
+        public string? Tags { get; set; } = "others"; // Optional with default
+        public bool IsArchived { get; set; } = false; // Soft delete or hide
     }
 }
