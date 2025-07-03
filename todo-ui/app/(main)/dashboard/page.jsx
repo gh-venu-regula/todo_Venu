@@ -16,6 +16,7 @@ export default function DashboardPage() {
           <TodoList todoDemo={todoDemo} setTodoDemo={setTodoDemo} />
         </div>
 
+        {/* Container for the right section of the dashboard, housing the Timer and ProgressBar components. */}
         <div className={classes.rightContainer}>
           <Timer />
           <ProgressBar todos={todoDemo} />

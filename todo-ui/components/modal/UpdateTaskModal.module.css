@@ -1,143 +1,240 @@
+/* Styles for the modal overlay */
 .modalOverlay {
   position: fixed;
+  /* Position the overlay to cover the entire screen */
   top: 0;
+  /* Align to the top of the viewport */
   left: 0;
+  /* Align to the left of the viewport */
   width: 100%;
+  /* Full width */
   height: 100%;
+  /* Full height */
   background: rgba(15, 23, 42, 0.5);
+  /* Semi-transparent dark overlay */
   display: flex;
+  /* Use flexbox for centering */
   justify-content: center;
+  /* Center horizontally */
   align-items: center;
+  /* Center vertically */
   z-index: 999;
+  /* Ensure the overlay is above other elements */
   backdrop-filter: blur(4px);
+  /* Apply a subtle blur effect */
 }
 
+/* Styles for the modal content */
 .modalContent {
   background: #ffffff;
+  /* White background for the modal */
   padding: 1.5rem;
+  /* Padding inside the modal */
   border-radius: 12px;
+  /* Rounded corners */
   width: 100%;
+  /* Full width */
   max-width: 400px;
+  /* Maximum width for the modal */
   font-family: 'Segoe UI', Arial, sans-serif;
+  /* Font family for text */
   box-shadow: 0 12px 48px rgba(0, 0, 0, 0.2);
+  /* Shadow for depth */
   animation: slideIn 0.25s ease-out;
+  /* Animation for modal appearance */
 }
 
+/* Keyframes for the slide-in animation */
 @keyframes slideIn {
   from {
     opacity: 0;
+    /* Start with invisible modal */
     transform: translateY(-20px) scale(0.98);
+    /* Slightly above and scaled down */
   }
+
   to {
     opacity: 1;
+    /* Fully visible */
     transform: translateY(0) scale(1);
+    /* Normal position and scale */
   }
 }
 
+/* Styles for the modal title */
 .modalTitle {
   margin-bottom: 1rem;
+  /* Space below the title */
   font-size: 1.4rem;
+  /* Large font size */
   font-weight: 600;
+  /* Semi-bold text */
   color: #111827;
+  /* Dark text color */
   text-align: center;
+  /* Center the title */
 }
 
+/* Styles for the form inside the modal */
 .form {
   display: flex;
+  /* Use flexbox for layout */
   flex-direction: column;
-  gap: 0.75rem; /* tighter gap */
+  /* Stack elements vertically */
+  gap: 0.75rem;
+  /* Space between form elements */
 }
 
+/* Styles for form groups */
 .formGroup {
   display: flex;
+  /* Use flexbox for layout */
   flex-direction: column;
+  /* Stack elements vertically */
   gap: 0.25rem;
+  /* Space between label and input */
 }
 
+/* Styles for checkbox form groups */
 .formGroupCheckbox {
   display: flex;
+  /* Use flexbox for layout */
   align-items: center;
+  /* Align items vertically */
   gap: 0.5rem;
+  /* Space between label and checkbox */
 }
 
+/* Styles for labels */
 .formGroup label,
 .formGroupCheckbox label {
   font-size: 0.9rem;
+  /* Font size for labels */
   font-weight: 500;
+  /* Medium font weight */
   color: #374151;
+  /* Dark text color */
 }
 
+/* Common styles for input, textarea, and select elements */
 .formGroup input[type="text"],
 .formGroup input[type="date"],
 .formGroup select,
 .formGroup textarea {
   font-family: 'Segoe UI', Arial, sans-serif;
+  /* Font family for text */
   padding: 8px 12px;
+  /* Padding inside the elements */
   border: 1px solid #d1d5db;
+  /* Light border color */
   border-radius: 8px;
+  /* Rounded corners */
   transition: border 0.2s, box-shadow 0.2s;
+  /* Smooth transition for focus effects */
   font-size: 0.92rem;
+  /* Font size */
   background-color: #f9fafb;
+  /* Light background color */
 }
 
+/* Styles for read-only input fields */
 .formGroup input[readonly] {
   background-color: #f3f4f6;
+  /* Light gray background */
   color: #6b7280;
+  /* Gray text color */
 }
 
+/* Styles for textarea elements */
 .formGroup textarea {
-  height: 70px; /* shorter height */
+  height: 70px;
+  /* Fixed height */
   resize: vertical;
+  /* Allow vertical resizing */
 }
 
+/* Focus styles for input, textarea, and select elements */
 .formGroup input:focus,
 .formGroup textarea:focus,
 .formGroup select:focus {
   border-color: #3b82f6;
+  /* Blue border on focus */
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  /* Blue shadow effect */
   outline: none;
+  /* Remove default outline */
   background-color: #fff;
+  /* White background on focus */
 }
 
+/* Styles for checkbox input elements */
 .formGroupCheckbox input[type="checkbox"] {
   width: 18px;
+  /* Width of the checkbox */
   height: 18px;
+  /* Height of the checkbox */
   cursor: pointer;
-  accent-color: #3b82f6; /* native accent for modern browsers */
+  /* Change cursor to pointer */
+  accent-color: #3b82f6;
+  /* Native accent color for modern browsers */
 }
 
+/* Styles for the button group */
 .buttonGroup {
   display: flex;
+  /* Use flexbox for layout */
   justify-content: center;
+  /* Center buttons horizontally */
   gap: 1rem;
+  /* Space between buttons */
   margin-top: 1rem;
+  /* Space above the button group */
 }
 
+/* Common styles for buttons */
 .buttonGroup button {
   border: none;
+  /* Remove border */
   padding: 8px 18px;
+  /* Padding inside the buttons */
   border-radius: 8px;
+  /* Rounded corners */
   font-weight: 500;
+  /* Medium font weight */
   cursor: pointer;
+  /* Change cursor to pointer */
   transition: background 0.2s, transform 0.1s;
+  /* Smooth transition for hover effects */
 }
 
+/* Styles for the submit button */
 .buttonGroup button[type="submit"] {
   background: #3b82f6;
+  /* Blue background color */
   color: #fff;
+  /* White text color */
 }
 
+/* Hover styles for the submit button */
 .buttonGroup button[type="submit"]:hover {
   background: #2563eb;
+  /* Darker blue background on hover */
   transform: translateY(-1px);
+  /* Slight upward movement on hover */
 }
 
+/* Styles for the cancel button */
 .buttonGroup button[type="button"] {
   background: #f3f4f6;
+  /* Light gray background color */
   color: #374151;
+  /* Dark text color */
 }
 
+/* Hover styles for the cancel button */
 .buttonGroup button[type="button"]:hover {
   background: #e5e7eb;
+  /* Slightly darker gray background on hover */
   transform: translateY(-1px);
+  /* Slight upward movement on hover */
 }

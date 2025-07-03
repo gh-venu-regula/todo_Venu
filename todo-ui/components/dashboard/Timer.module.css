@@ -1,104 +1,179 @@
+/* Styles for the timer wrapper container */
 .timerWrapper {
   position: relative;
+  /* Position relative for child elements */
   width: 280px;
+  /* Width of the container */
   height: 320px;
+  /* Height of the container */
   background: linear-gradient(to bottom, #fde047, #facc15);
+  /* Gradient background */
   border-radius: 16px;
+  /* Rounded corners */
   overflow: hidden;
+  /* Hide overflow */
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+  /* Subtle shadow for depth */
   font-family: 'Segoe UI', Arial, sans-serif;
+  /* Font family for text */
 }
 
+/* Styles for the timer title */
 .timerTitle {
   position: absolute;
+  /* Position the title absolutely */
   top: 12px;
+  /* Distance from the top */
   left: 16px;
+  /* Distance from the left */
   font-size: 1rem;
+  /* Font size */
   font-weight: 600;
-  color: #78350f; /* warm dark brown for contrast */
+  /* Semi-bold text */
+  color: #78350f;
+  /* Warm dark brown for contrast */
 }
 
-.halfCircleTop,
+/* Styles for the decorative half-circle at the top */
+.halfCircleTop {
+  position: absolute;
+  /* Position absolutely */
+  left: 50%;
+  /* Center horizontally */
+  transform: translateX(-50%);
+  /* Adjust for centering */
+  width: 200%;
+  /* Width of the half-circle */
+  height: 80px;
+  /* Height of the half-circle */
+  background: #fde047;
+  /* Yellow background color */
+  z-index: 0;
+  /* Place behind other elements */
+  border-radius: 0 0 100% 100%;
+  /* Rounded bottom corners */
+  top: -40px;
+  /* Position above the container */
+}
+
+/* Styles for the decorative half-circle at the bottom */
 .halfCircleBottom {
   position: absolute;
+  /* Position absolutely */
   left: 50%;
+  /* Center horizontally */
   transform: translateX(-50%);
+  /* Adjust for centering */
   width: 200%;
+  /* Width of the half-circle */
   height: 80px;
+  /* Height of the half-circle */
   background: #fde047;
+  /* Yellow background color */
   z-index: 0;
-}
-
-.halfCircleTop {
-  top: -40px;
-  border-radius: 0 0 100% 100%;
-}
-
-.halfCircleBottom {
-  bottom: -40px;
+  /* Place behind other elements */
   border-radius: 100% 100% 0 0;
+  /* Rounded top corners */
+  bottom: -40px;
+  /* Position below the container */
 }
 
+/* Styles for the timer content area */
 .timerContent {
   position: relative;
+  /* Position relative for child elements */
   z-index: 1;
+  /* Place above decorative elements */
   padding: 100px 20px;
+  /* Padding inside the content area */
   text-align: center;
+  /* Center align text */
 }
 
+/* Styles for the displayed time */
 .time {
   font-size: 3rem;
+  /* Large font size for emphasis */
   font-weight: 700;
+  /* Bold text */
   color: #1c1917;
+  /* Dark text color */
   margin: 0 0 20px;
+  /* Space below the time */
 }
 
+/* Styles for the buttons container */
 .buttons {
   display: flex;
+  /* Use flexbox for layout */
   justify-content: center;
+  /* Center buttons horizontally */
   gap: 1rem;
+  /* Space between buttons */
   margin-bottom: 20px;
+  /* Space below the buttons */
 }
 
+/* Styles for individual buttons */
 .buttons button {
   background: #fef08a;
+  /* Light yellow background color */
   width: 30px;
+  /* Width of the button */
   height: 30px;
+  /* Height of the button */
   border-radius: 50%;
+  /* Circular shape */
   border: none;
+  /* Remove border */
   font-weight: 400;
+  /* Normal font weight */
   cursor: pointer;
+  /* Change cursor to pointer */
   transition: background 0.2s ease;
+  /* Smooth transition for hover effects */
   text-align: center;
+  /* Center align text */
 }
 
+/* Hover styles for buttons */
 .buttons button:hover {
   background: #fde047;
+  /* Darker yellow background on hover */
 }
 
+/* Styles for the controls container */
 .controls {
   display: flex;
+  /* Use flexbox for layout */
   justify-content: center;
+  /* Center controls horizontally */
   gap: 1rem;
+  /* Space between controls */
 }
 
+/* Styles for individual control buttons */
 .controls button {
   background: #facc15;
+  /* Yellow background color */
   border: none;
+  /* Remove border */
   border-radius: 8px;
+  /* Rounded corners */
   padding: 10px 20px;
+  /* Padding inside the button */
   font-weight: 600;
+  /* Semi-bold text */
   cursor: pointer;
+  /* Change cursor to pointer */
   transition: background 0.2s ease, transform 0.1s ease;
+  /* Smooth transition for hover effects */
 }
 
+/* Hover styles for control buttons */
 .controls button:hover {
   background: #eab308;
+  /* Darker yellow background on hover */
   transform: translateY(-1px);
-}
-.timerTitle {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #78350f; /* warm dark brown for contrast */
-  margin-bottom: 16px;
+  /* Slight upward movement on hover */
 }

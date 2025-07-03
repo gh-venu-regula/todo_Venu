@@ -5,15 +5,20 @@ using TodoAPI.DTOs;
 using TodoAPI.Models;
 namespace TodoAPI.Services
 {
+    // Service class for managing tasks
+    // Implements the ITaskService interface
     public class TaskService : ITaskService
     {
         private readonly AppDbContext _context;
 
+        // Constructor initializes the DbContext for dependency injection
         public TaskService(AppDbContext context)
         {
             _context = context;
         }
 
+        // Method to retrieve all tasks for a specific user
+        // Filters tasks by userId and maps them to TaskReadDto
         public async Task<IEnumerable<TaskReadDto>> GetAllTasksAsync(int userId)
         {
             return await _context.Tasks
@@ -32,6 +37,8 @@ namespace TodoAPI.Services
                 })
                 .ToListAsync();
         }
+        // Method to retrieve a specific task by its ID for a user
+        // Filters tasks by userId and taskId and maps them to TaskReadDto
         public async Task<TaskReadDto?> GetTaskByIdAsync(int userId, int taskId)
         {
             var task = await _context.Tasks
@@ -53,6 +60,8 @@ namespace TodoAPI.Services
             return task;
         }
 
+        // Method to create a new task for a user
+        // Maps TaskCreateDto to Task entity and saves it to the database
         public async Task<bool> CreateTaskAsync(int userId, TaskCreateDto task)
         {
             var new_task = new TodoAPI.Models.Task
@@ -72,6 +81,8 @@ namespace TodoAPI.Services
             return await _context.SaveChangesAsync() > 0;
         }
 
+        // Method to update an existing task for a user
+        // Finds the task by ID, updates its properties, and saves changes to the database
         public async Task<bool> UpdateTaskAsync(int userId, TaskUpdateDto task)
         {
             var taskToUpdate = await _context.Tasks.FindAsync(task.Id);
@@ -87,6 +98,8 @@ namespace TodoAPI.Services
             return await _context.SaveChangesAsync() > 0;
         }
 
+        // Method to delete a task for a user
+        // Finds the task by ID, removes it from the database, and saves changes
         public async Task<bool> DeleteTaskAsync(int userId, int taskId)
         {
             var task = await _context.Tasks.FindAsync(taskId);

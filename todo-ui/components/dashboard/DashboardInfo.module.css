@@ -1,15 +1,27 @@
+/* Styles for the container holding the dashboard information */
 .dashboardInfo {
   display: flex;
- flex-direction: column;
- align-items: start;
- justify-content: center;
- width: 100%;
-}
-.greeting {
-  font-size: 2rem;
-  font-weight: bold;
+  /* Use flexbox for layout */
+  flex-direction: column;
+  /* Stack elements vertically */
+  align-items: start;
+  /* Align items to the start of the container */
+  justify-content: center;
+  /* Center items vertically */
+  width: 100%;
+  /* Full width of the container */
 }
 
+/* Styles for the greeting text */
+.greeting {
+  font-size: 2rem;
+  /* Large font size for emphasis */
+  font-weight: bold;
+  /* Bold text for emphasis */
+}
+
+/* Styles for the plan text */
 .plan {
   font-size: 1.2rem;
+  /* Medium font size for readability */
 }

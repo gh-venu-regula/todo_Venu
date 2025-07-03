@@ -1,38 +1,67 @@
+/* Styles for the container holding the actions */
 .actionsContainer {
   position: relative;
+  /* Position relative for dropdown alignment */
   display: inline-block;
+  /* Inline-block for proper alignment */
 }
 
+/* Styles for the three dots button */
 .threeDotsButton {
   background: transparent;
+  /* Transparent background */
   border: none;
+  /* Remove border */
   cursor: pointer;
+  /* Change cursor to pointer */
   font-size: 18px;
+  /* Font size for the dots */
 }
 
+/* Styles for the dropdown menu */
 .dropdownMenu {
   position: absolute;
+  /* Position the menu absolutely */
   right: 0;
+  /* Align to the right of the container */
   top: 20px;
+  /* Position below the button */
   background-color: #fff;
+  /* White background */
   border: 1px solid #eee;
+  /* Light border color */
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  /* Rounded corners */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  /* Subtle shadow for depth */
   z-index: 100;
+  /* Ensure the menu is above other elements */
   display: flex;
+  /* Use flexbox for layout */
   flex-direction: column;
+  /* Stack menu options vertically */
 }
 
+/* Styles for individual menu options */
 .menuOption {
   background: none;
+  /* Transparent background */
   border: none;
+  /* Remove border */
   padding: 8px 16px;
+  /* Padding inside the option */
   cursor: pointer;
+  /* Change cursor to pointer */
   font-family: Arial, Helvetica, sans-serif;
+  /* Font family for text */
   color: #333;
+  /* Dark text color */
   text-align: left;
+  /* Align text to the left */
 }
 
+/* Hover styles for menu options */
 .menuOption:hover {
   background-color: #f2f2f2;
+  /* Light gray background on hover */
 }

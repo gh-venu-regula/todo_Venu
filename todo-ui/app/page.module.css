@@ -1,168 +1,262 @@
+/* Styles for the main page container */
 .page {
   --gray-rgb: 0, 0, 0;
+  /* Default RGB values for gray */
   --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
+  /* Semi-transparent gray */
   --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
+  /* Lighter semi-transparent gray */
 
   --button-primary-hover: #383838;
+  /* Hover color for primary buttons */
   --button-secondary-hover: #f2f2f2;
+  /* Hover color for secondary buttons */
 
   display: grid;
+  /* Use grid layout */
   grid-template-rows: 20px 1fr 20px;
+  /* Define grid rows */
   align-items: center;
+  /* Center items vertically */
   justify-items: center;
+  /* Center items horizontally */
   min-height: 100svh;
+  /* Minimum height of the viewport */
   padding: 80px;
+  /* Padding around the container */
   gap: 64px;
-  font-family: var(--font-geist-sans);
+  /* Space between grid items */
+  font-family: 'Arial', sans-serif;
+  /* Setting the font-family to Arial with a fallback to sans-serif for consistent typography across the application. */
 }
 
+/* Dark mode styles for the page container */
 @media (prefers-color-scheme: dark) {
   .page {
     --gray-rgb: 255, 255, 255;
+    /* RGB values for gray in dark mode */
     --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
+    /* Semi-transparent gray */
     --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
+    /* Lighter semi-transparent gray */
 
     --button-primary-hover: #ccc;
+    /* Hover color for primary buttons in dark mode */
     --button-secondary-hover: #1a1a1a;
+    /* Hover color for secondary buttons in dark mode */
   }
 }
 
+/* Styles for the main content area */
 .main {
   display: flex;
+  /* Use flexbox for layout */
   flex-direction: column;
+  /* Stack elements vertically */
   gap: 32px;
+  /* Space between elements */
   grid-row-start: 2;
+  /* Start in the second row of the grid */
 }
 
+/* Styles for ordered lists inside the main content */
 .main ol {
   font-family: var(--font-geist-mono);
+  /* Font family for text */
   padding-left: 0;
+  /* Remove default padding */
   margin: 0;
+  /* Remove default margin */
   font-size: 14px;
+  /* Font size */
   line-height: 24px;
+  /* Line height */
   letter-spacing: -0.01em;
+  /* Adjust letter spacing */
   list-style-position: inside;
+  /* Position list markers inside */
 }
 
+/* Styles for list items except the last one */
 .main li:not(:last-of-type) {
   margin-bottom: 8px;
+  /* Space below each list item */
 }
 
+/* Styles for inline code elements */
 .main code {
   font-family: inherit;
+  /* Inherit font family */
   background: var(--gray-alpha-100);
+  /* Background color */
   padding: 2px 4px;
+  /* Padding inside the code element */
   border-radius: 4px;
+  /* Rounded corners */
   font-weight: 600;
+  /* Semi-bold text */
 }
 
+/* Styles for call-to-action buttons */
 .ctas {
   display: flex;
+  /* Use flexbox for layout */
   gap: 16px;
+  /* Space between buttons */
 }
 
+/* Styles for individual call-to-action buttons */
 .ctas a {
   appearance: none;
+  /* Remove default appearance */
   border-radius: 128px;
+  /* Rounded corners */
   height: 48px;
+  /* Height of the button */
   padding: 0 20px;
+  /* Padding inside the button */
   border: none;
+  /* Remove border */
   border: 1px solid transparent;
-  transition:
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s;
+  /* Transparent border */
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  /* Smooth transition for hover effects */
   cursor: pointer;
+  /* Change cursor to pointer */
   display: flex;
+  /* Use flexbox for layout */
   align-items: center;
+  /* Center items vertically */
   justify-content: center;
+  /* Center items horizontally */
   font-size: 16px;
+  /* Font size */
   line-height: 20px;
+  /* Line height */
   font-weight: 500;
+  /* Medium font weight */
 }
 
+/* Styles for primary call-to-action buttons */
 a.primary {
   background: var(--foreground);
+  /* Background color */
   color: var(--background);
+  /* Text color */
   gap: 8px;
+  /* Space between elements inside the button */
 }
 
+/* Styles for secondary call-to-action buttons */
 a.secondary {
   border-color: var(--gray-alpha-200);
+  /* Border color */
   min-width: 158px;
+  /* Minimum width */
 }
 
+/* Styles for the footer */
 .footer {
   grid-row-start: 3;
+  /* Start in the third row of the grid */
   display: flex;
+  /* Use flexbox for layout */
   gap: 24px;
+  /* Space between elements */
 }
 
+/* Styles for links inside the footer */
 .footer a {
   display: flex;
+  /* Use flexbox for layout */
   align-items: center;
+  /* Align items vertically */
   gap: 8px;
+  /* Space between elements inside the link */
 }
 
+/* Styles for images inside the footer */
 .footer img {
   flex-shrink: 0;
+  /* Prevent shrinking */
 }
 
-/* Enable hover only on non-touch devices */
+/* Enable hover effects only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   a.primary:hover {
     background: var(--button-primary-hover);
+    /* Background color on hover */
     border-color: transparent;
+    /* Transparent border on hover */
   }
 
   a.secondary:hover {
     background: var(--button-secondary-hover);
+    /* Background color on hover */
     border-color: transparent;
+    /* Transparent border on hover */
   }
 
   .footer a:hover {
     text-decoration: underline;
+    /* Underline text on hover */
     text-underline-offset: 4px;
+    /* Offset for underline */
   }
 }
 
+/* Responsive styles for small screens */
 @media (max-width: 600px) {
   .page {
     padding: 32px;
+    /* Adjust padding */
     padding-bottom: 80px;
+    /* Adjust bottom padding */
   }
 
   .main {
     align-items: center;
+    /* Center align items */
   }
 
   .main ol {
     text-align: center;
+    /* Center align text */
   }
 
   .ctas {
     flex-direction: column;
+    /* Stack buttons vertically */
   }
 
   .ctas a {
     font-size: 14px;
+    /* Adjust font size */
     height: 40px;
+    /* Adjust height */
     padding: 0 16px;
+    /* Adjust padding */
   }
 
   a.secondary {
     min-width: auto;
+    /* Remove minimum width */
   }
 
   .footer {
     flex-wrap: wrap;
+    /* Wrap elements */
     align-items: center;
+    /* Center align items */
     justify-content: center;
+    /* Center align items horizontally */
   }
 }
 
+/* Dark mode styles for the logo */
 @media (prefers-color-scheme: dark) {
   .logo {
     filter: invert();
+    /* Invert colors for dark mode */
   }
 }

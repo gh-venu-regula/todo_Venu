@@ -1,8 +1,10 @@
+/* Container for the login page layout, using flexbox for alignment and Arial font for readability. */
 .loginContainer {
   display: flex;
   flex-direction: row;
   height: 95vh;
-   font-family: 'Arial', sans-serif;
+  font-family: 'Arial', sans-serif;
+  /* Ensures consistent typography. */
 }
 
 .inputContainer {
@@ -35,12 +37,14 @@
   color: #333;
 }
 
+/* Styling for the welcome text to make it bold and visually appealing. */
 .welcomeText {
   text-align: left;
   font-size: 2rem;
   margin-bottom: 0.5rem;
   font-weight: bold;
- font-family: 'Arial', sans-serif;
+  font-family: 'Arial', sans-serif;
+  /* Ensures consistent typography. */
 }
 
 .welcomeTextSmall {
@@ -66,7 +70,7 @@
 }
 
 .forgotPasswordButton {
-    margin-right: 30%;
+  margin-right: 30%;
   align-self: flex-end;
   background: none;
   border: none;
@@ -79,12 +83,14 @@
 .forgotPasswordButton:hover {
   text-decoration: underline;
 }
+
 .errorMessage {
   color: red;
   font-size: 0.9rem;
   margin-top: 0.5rem;
   text-align: left;
 }
+
 .loginButton {
   padding: 0.75rem 1rem;
   background-color: #0070f3;
@@ -127,26 +133,33 @@
   height: 100%;
   margin: 10px;
 }
+
 .input:focus {
   border: 2px solid #0070f3;
-  outline: none;  
-  box-shadow: 0 0 5px rgba(0, 112, 243, 0.5);   
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 112, 243, 0.5);
 }
-.image{
-    border-radius: 8px;
+
+.image {
+  border-radius: 8px;
 }
+
 @media (max-width: 768px) {
   .loginContainer {
-    flex-direction: column; /* Stack vertically just in case */
+    flex-direction: column;
+    /* Stack vertically just in case */
   }
 
   .inputContainer {
-    flex: none;       /* Don’t grow to half — use full width */
+    flex: none;
+    /* Don’t grow to half — use full width */
     width: 100%;
-    height: 95vh;    /* Take full screen height */
+    height: 95vh;
+    /* Take full screen height */
   }
 
   .imageContainer {
-    display: none;    /* Hide the image on mobile */
+    display: none;
+    /* Hide the image on mobile */
   }
 }

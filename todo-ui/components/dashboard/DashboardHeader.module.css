@@ -1,15 +1,25 @@
+/* Styles for the container holding the app name and logo */
 .appNameContainer {
   display: flex;
+  /* Use flexbox for layout */
   align-items: center;
+  /* Align items vertically */
   font-family: 'Arial', sans-serif;
+  /* Font family for text */
   margin-left: 0rem;
+  /* Left margin for alignment */
 }
 
+/* Styles for the app logo */
 .appLogo {
   margin-right: 8px;
+  /* Space to the right of the logo */
 }
 
+/* Styles for the app name */
 .appName {
   font-size: 1.5rem;
+  /* Large font size for the app name */
   font-weight: bold;
+  /* Bold text for emphasis */
 }

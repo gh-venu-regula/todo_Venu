@@ -6,15 +6,15 @@ import Image from 'next/image';
 import SignupImage from '@/assets/images/loginImage.jpg'; // Renamed for clarity
 import TaskIcon from '@/assets/icons/TaskIcon.png';
 import SignupSubmitForm from '@/components/SugnupSubmitForm';
-import { useEffect ,useActionState} from 'react';
+import { useEffect, useActionState } from 'react';
 import { Signup } from '@/services/AuthServices';
 import { redirect } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 export default function SignupPage() {
   const router = useRouter();
-  const [state, formAction] = useActionState(Signup, { result: false ,message:''});
+  const [state, formAction] = useActionState(Signup, { result: false, message: '' });
   useEffect(() => {
-    if (state.result) { 
+    if (state.result) {
       toast.success("Signup successful! Redirecting to Login page", {
         position: "top-left",
         autoClose: 3000, // milliseconds
@@ -22,8 +22,8 @@ export default function SignupPage() {
       setTimeout(() => {
         redirect('/login'); // Redirect to login page after signup
       }, 3000); // Redirect after 3 seconds
-    }else if (state.message === 'fail') {
-      toast.error("Signup failed. Something went wrong.", {
+    } else if (state.status === 'fail') {
+      toast.error(state.message, {
         position: "top-left",
         autoClose: 3000, // milliseconds
       });
@@ -62,6 +62,7 @@ export default function SignupPage() {
               className={classes.input}
               required
             />
+            {/* Input field for password with required validation. */}
             <input
               name="password"
               type="password"
@@ -69,15 +70,17 @@ export default function SignupPage() {
               className={classes.input}
               required
             />
-           <SignupSubmitForm/>
+            {/* Component for handling signup form submission. */}
+            <SignupSubmitForm />
           </form>
 
+          {/* Prompt for users who already have an account to navigate to the login page. */}
           <p className={classes.signupPrompt}>
             Already have an account?{' '}
             <button
               type="button"
-              className={classes.signupLoginButtonLink}
-              onClick={()=>router.push('/login')}
+              className={classes.signupLoginButtonLink} // CSS class for styling the login button link.
+              onClick={() => router.push('/login')} // Redirecting to the login page.
             >
               Login
             </button>

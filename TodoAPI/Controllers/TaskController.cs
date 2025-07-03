@@ -9,13 +9,15 @@ using TodoAPI.Services;
 
 namespace TodoAPI.Controllers
 {
+    // Controller for handling task-related endpoints
     [ApiController]
     [Route("api/[controller]")]
-    [Authorize] // Ensure the controller is protected by authentication
+    [Authorize] // Ensures the controller is protected by authentication
     public class TaskController : Controller
     {
         private readonly ITaskService _taskService;
 
+        // Property to retrieve the authenticated user's ID from claims
         protected int UserId
         {
             get
@@ -29,19 +31,21 @@ namespace TodoAPI.Controllers
             }
         }
 
-
+        // Constructor initializes the task service
         public TaskController(ITaskService taskService)
         {
             _taskService = taskService;
         }
 
+        // Endpoint to retrieve all tasks for the authenticated user
         [HttpGet]
         public async Task<IActionResult> GetAllTasks()
         {
-            var tasks = await _taskService.GetAllTasksAsync(UserId);
+            var tasks = await _taskService.GetAllTasksAsync(UserId); // Fetches tasks for the user
             return Ok(new { Tasks = tasks });
         }
 
+        // Endpoint to retrieve a specific task by its ID for the authenticated user
         [HttpGet("{id}")]
         public async Task<IActionResult> GetTaskById(int id)
         {
@@ -50,6 +54,7 @@ namespace TodoAPI.Controllers
             return Ok(new { Task = task });
         }
 
+        // Endpoint to create a new task for the authenticated user
         [HttpPost]
         public async Task<IActionResult> CreateTask([FromBody] TaskCreateDto task)
         {
@@ -59,6 +64,7 @@ namespace TodoAPI.Controllers
             return Ok(new { Result = true });
         }
 
+        // Endpoint to update an existing task for the authenticated user
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateTask(int id, [FromBody] TaskUpdateDto task)
         {
@@ -68,6 +74,7 @@ namespace TodoAPI.Controllers
             return Ok(new { Result = true });
         }
 
+        // Endpoint to delete a task for the authenticated user
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTask(int id)
         {

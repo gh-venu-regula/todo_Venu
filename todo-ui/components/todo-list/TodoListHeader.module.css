@@ -1,97 +1,166 @@
+/* Styles for the header section of the Todo List */
 .todoListHeader {
   display: flex;
+  /* Align items in a row */
   justify-content: flex-start;
+  /* Align items to the start of the container */
   gap: 2rem;
+  /* Space between child elements */
   padding: 1rem 2rem;
+  /* Padding inside the header */
   border-bottom: 1px solid #eee;
+  /* Bottom border for separation */
   background: #ffffff;
+  /* White background color */
   border-radius: 8px;
+  /* Rounded corners */
 }
 
+/* Styles for filter and sort containers */
 .filterContainer,
 .sortContainer {
   display: flex;
+  /* Align items in a column */
   flex-direction: column;
+  /* Stack child elements vertically */
 }
 
+/* Styles for labels inside filter and sort containers */
 .filterContainer label,
 .sortContainer label {
   font-size: 0.85rem;
+  /* Small font size */
   font-weight: bold;
+  /* Bold text */
   font-family: Arial, Helvetica, sans-serif;
+  /* Font family */
   color: #333;
+  /* Dark text color */
   margin-bottom: 0.3rem;
+  /* Space below the label */
   margin-left: 0.3rem;
+  /* Space to the left of the label */
 }
 
+/* Styles for dropdowns inside filter and sort containers */
 .filterContainer select,
 .sortContainer select {
   padding: 0.5rem 1rem;
+  /* Padding inside the dropdown */
   border-radius: 8px;
+  /* Rounded corners */
   border: 1px solid #ddd;
+  /* Light border color */
   background: #f9f9f9;
+  /* Light background color */
   font-size: 0.9rem;
+  /* Font size */
   font-family: Arial, Helvetica, sans-serif;
+  /* Font family */
   color: #333;
+  /* Text color */
   transition: border 0.2s ease, box-shadow 0.2s ease;
+  /* Smooth transition for focus effects */
 }
 
+/* Focus styles for filter dropdown */
 .filterContainer select:focus {
-  border: 1px solid #0266fc; /* green like completed */
+  border: 1px solid #0266fc;
+  /* Blue border on focus */
   box-shadow: 0 0 0 2px rgba(4, 74, 250, 0.2);
+  /* Blue shadow effect */
   outline: none;
+  /* Remove default outline */
 }
 
+/* Focus styles for sort dropdown */
 .sortContainer select:focus {
-  border: 1px solid #0077ff; /* orange like pending */
+  border: 1px solid #0077ff;
+  /* Blue border on focus */
   box-shadow: 0 0 0 2px rgba(9, 56, 244, 0.2);
+  /* Blue shadow effect */
   outline: none;
+  /* Remove default outline */
 }
 
+/* Hover styles for dropdowns */
 .filterContainer select:hover,
 .sortContainer select:hover {
   cursor: pointer;
+  /* Change cursor to pointer */
 }
+
+/* Additional styles for the header section */
 .todoListHeader {
   display: flex;
+  /* Align items in a row */
   justify-content: space-between;
+  /* Space items evenly */
   align-items: center;
+  /* Align items vertically */
   margin-bottom: 1rem;
+  /* Space below the header */
 }
 
+/* Styles for the controls container */
 .controlsContainer {
   display: flex;
+  /* Align items in a row */
   gap: 1rem;
+  /* Space between child elements */
 }
 
-.filterContainer, .sortContainer {
+/* Styles for filter and sort containers */
+.filterContainer,
+.sortContainer {
   display: flex;
+  /* Align items in a column */
   flex-direction: column;
+  /* Stack child elements vertically */
 }
 
+/* Styles for labels */
 .label {
   font-weight: 500;
+  /* Medium font weight */
   margin-bottom: 0.25rem;
+  /* Space below the label */
   color: #333;
+  /* Dark text color */
 }
 
+/* Styles for dropdowns */
 .select {
   padding: 6px 10px;
+  /* Padding inside the dropdown */
   border: 1px solid #ddd;
+  /* Light border color */
   border-radius: 6px;
+  /* Rounded corners */
   font-family: Arial, Helvetica, sans-serif;
+  /* Font family */
 }
 
+/* Styles for the create button */
 .createButton {
   background-color: #007bff;
+  /* Blue background color */
   color: #fff;
+  /* White text color */
   border: none;
+  /* Remove border */
   padding: 8px 16px;
+  /* Padding inside the button */
   border-radius: 20px;
+  /* Rounded corners */
   cursor: pointer;
+  /* Change cursor to pointer */
   font-weight: 500;
+  /* Medium font weight */
 }
 
+/* Hover styles for the create button */
 .createButton:hover {
   background-color: #0056b3;
+  /* Darker blue background on hover */
 }
