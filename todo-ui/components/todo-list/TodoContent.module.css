@@ -1,0 +1,106 @@
+.todoContent{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    background-color: #fff;
+    padding-left: 5px;
+    height: 165px;
+}
+.ContentHead{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 5px 5px 5px;
+}
+.PriorityContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    gap: 0.5rem;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding:4px 8px 4px 8px;
+    border-radius: 10px;
+}
+.ContentBody {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap:0.75rem;
+}
+.ContentFooter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.LowPriorityContainer {
+   background-color: #dbeafe;
+}
+.MediumPriorityContainer{
+    background-color: #fff3e0;
+}
+.HighPriorityContainer{
+    background-color: #f8dada;
+}
+.LowPriority {
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #155dfc;
+    margin: 0;
+}
+.MediumPriority {
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ff6900;
+     margin: 0;
+}
+.HighPriority {
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #FF0000;
+     margin: 0;
+}
+.PriorityLogo{
+    margin: 0;
+}
+.threeDots{
+    transform: rotate(90deg);
+    z-index: 1;
+}
+.TodoTitle{
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    margin: 0;
+}
+.TodoDescription {
+  font-weight: 400;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #666;
+  margin: 0;
+
+  /* NEW! */
+  white-space: nowrap;      /* Keep it on one line */
+  overflow: hidden;         /* Hide anything that overflows the container */
+  text-overflow: ellipsis;  /* Show ... when text is cut off */
+  width: 200px;
+}
+
+.tag{
+    background-color: red;
+    color: white;
+    border-radius: 30px;
+    padding:  3px 5px 3px 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.DueDateContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 4px 8px 4px 8px;
+}

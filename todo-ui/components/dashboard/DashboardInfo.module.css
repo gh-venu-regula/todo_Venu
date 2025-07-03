@@ -1,0 +1,15 @@
+.dashboardInfo {
+  display: flex;
+ flex-direction: column;
+ align-items: start;
+ justify-content: center;
+ width: 100%;
+}
+.greeting {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.plan {
+  font-size: 1.2rem;
+}

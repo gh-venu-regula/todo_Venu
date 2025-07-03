@@ -1,0 +1,104 @@
+.timerWrapper {
+  position: relative;
+  width: 280px;
+  height: 320px;
+  background: linear-gradient(to bottom, #fde047, #facc15);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.timerTitle {
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #78350f; /* warm dark brown for contrast */
+}
+
+.halfCircleTop,
+.halfCircleBottom {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200%;
+  height: 80px;
+  background: #fde047;
+  z-index: 0;
+}
+
+.halfCircleTop {
+  top: -40px;
+  border-radius: 0 0 100% 100%;
+}
+
+.halfCircleBottom {
+  bottom: -40px;
+  border-radius: 100% 100% 0 0;
+}
+
+.timerContent {
+  position: relative;
+  z-index: 1;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.time {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1c1917;
+  margin: 0 0 20px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 20px;
+}
+
+.buttons button {
+  background: #fef08a;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  text-align: center;
+}
+
+.buttons button:hover {
+  background: #fde047;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.controls button {
+  background: #facc15;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.controls button:hover {
+  background: #eab308;
+  transform: translateY(-1px);
+}
+.timerTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #78350f; /* warm dark brown for contrast */
+  margin-bottom: 16px;
+}

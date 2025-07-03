@@ -1,0 +1,143 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  backdrop-filter: blur(4px);
+}
+
+.modalContent {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.25s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modalTitle {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #111827;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem; /* tighter gap */
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.formGroupCheckbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.formGroup label,
+.formGroupCheckbox label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.formGroup input[type="text"],
+.formGroup input[type="date"],
+.formGroup select,
+.formGroup textarea {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  transition: border 0.2s, box-shadow 0.2s;
+  font-size: 0.92rem;
+  background-color: #f9fafb;
+}
+
+.formGroup input[readonly] {
+  background-color: #f3f4f6;
+  color: #6b7280;
+}
+
+.formGroup textarea {
+  height: 70px; /* shorter height */
+  resize: vertical;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus,
+.formGroup select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  outline: none;
+  background-color: #fff;
+}
+
+.formGroupCheckbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #3b82f6; /* native accent for modern browsers */
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.buttonGroup button {
+  border: none;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.buttonGroup button[type="submit"] {
+  background: #3b82f6;
+  color: #fff;
+}
+
+.buttonGroup button[type="submit"]:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+.buttonGroup button[type="button"] {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.buttonGroup button[type="button"]:hover {
+  background: #e5e7eb;
+  transform: translateY(-1px);
+}

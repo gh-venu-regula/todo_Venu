@@ -1,0 +1,152 @@
+.loginContainer {
+  display: flex;
+  flex-direction: row;
+  height: 95vh;
+   font-family: 'Arial', sans-serif;
+}
+
+.inputContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+}
+
+.inputInner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+}
+
+.appNameContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.appName {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.welcomeText {
+  text-align: left;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+ font-family: 'Arial', sans-serif;
+}
+
+.welcomeTextSmall {
+  text-align: left;
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 3rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+}
+
+.input {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 65%;
+}
+
+.forgotPasswordButton {
+    margin-right: 30%;
+  align-self: flex-end;
+  background: none;
+  border: none;
+  color: #0070f3;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-bottom: 0rem;
+}
+
+.forgotPasswordButton:hover {
+  text-decoration: underline;
+}
+.errorMessage {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  text-align: left;
+}
+.loginButton {
+  padding: 0.75rem 1rem;
+  background-color: #0070f3;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  width: 25%;
+  margin-bottom: 1rem;
+}
+
+.loginButton:hover {
+  background-color: #005bb5;
+}
+
+.signUpPrompt {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #333;
+  text-align: left;
+}
+
+.signUpButton {
+  background: none;
+  border: none;
+  color: #0070f3;
+  cursor: pointer;
+}
+
+.signUpButton:hover {
+  text-decoration: underline;
+}
+
+.imageContainer {
+  flex: 0.75;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 10px;
+}
+.input:focus {
+  border: 2px solid #0070f3;
+  outline: none;  
+  box-shadow: 0 0 5px rgba(0, 112, 243, 0.5);   
+}
+.image{
+    border-radius: 8px;
+}
+@media (max-width: 768px) {
+  .loginContainer {
+    flex-direction: column; /* Stack vertically just in case */
+  }
+
+  .inputContainer {
+    flex: none;       /* Don’t grow to half — use full width */
+    width: 100%;
+    height: 95vh;    /* Take full screen height */
+  }
+
+  .imageContainer {
+    display: none;    /* Hide the image on mobile */
+  }
+}

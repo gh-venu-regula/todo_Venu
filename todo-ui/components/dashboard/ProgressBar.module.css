@@ -1,0 +1,53 @@
+.wrapper {
+  width: 250px;
+  height: 150px;
+  margin: 2rem auto;
+  position: relative;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  padding-top: 2rem;
+}
+
+.heading {
+  position: absolute;
+  top: 0.8rem;
+  left: 1rem;
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #334155;
+  text-align: center;
+}
+
+.svg {
+  width: 100%;
+  height: 100%;
+}
+
+.bgArc {
+  fill: none;
+  stroke: #fcd34d; /* Tailwind yellow-400 */
+  stroke-width: 15;
+  stroke-linecap: round;
+  opacity: 0.3;
+}
+
+.fgArc {
+  fill: none;
+  stroke: url(#progressGradient);
+  stroke-width: 15;
+  stroke-linecap: round;
+  filter: drop-shadow(0 4px 8px rgba(34, 197, 94, 0.3));
+  transition: all 0.6s ease-in-out;
+}
+
+.text {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  fill: #1f2937;
+  text-anchor: middle;
+  dominant-baseline: middle;
+}

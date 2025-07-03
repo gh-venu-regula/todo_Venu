@@ -1,4 +1,5 @@
 
+import DashboardHeader from "@/components/dashboard/DashboardHeader";
 import "./globals.css";
 export const metadata = {
   title: "Create Next App",

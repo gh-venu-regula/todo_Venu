@@ -1,5 +1,6 @@
 using AutoMapper;
 
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 using TodoAPI.DTOs;
@@ -30,7 +31,7 @@ namespace TodoAPI.Controllers
             if (!result)
                 return BadRequest("User already exists or registration failed.");
 
-            return Ok("User registered successfully.");
+            return Ok(new { Message = "User registered successfully." });
         }
 
         [HttpPost("login")]
@@ -45,5 +46,12 @@ namespace TodoAPI.Controllers
 
             return Ok(new { Token = token });
         }
+        [Authorize]
+        [HttpGet("verify")]
+        public IActionResult VerifyToken()
+        {
+            return Ok(new { isvalid = true, Message = "success" });
+        }
     }
 }
+
